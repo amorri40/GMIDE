@@ -1,73 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <script src="coffee-script.js"></script>
-    <style>
-        #cc-editor {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: 50%;
-            left: 0;
-            z-index: 1;
-            background-color:#EEE;
-            font-style: Monaco, Menlo, monospace;
-            font-size: 10pt;
-        }
-        #cc-results {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 50%;
-            z-index: 1;
-            font-style: Monaco, Menlo, monospace;
-            font-size: 10pt;
-        }
-        #runcc {
-            position: fixed;
-            right: 10px;
-            bottom: 5px;
-            z-index: 3;
-        }
-        #error {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            padding: 8px 60px 8px 15px;
-            background-color: #DDD;
-            color: #900;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: .8em;
-            text-align: right;
-            z-index: 2;
-            opacity: .8;
-            -webkit-transition: opacity .2s linear;
-            -webkit-transform: translate3d(0,0,0);
-        }
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="coffee-script.js"></script>
+        <link rel="stylesheet" type="text/css" href="coffee-console.css"/>
+    </head>
+    <body>
+        <div id="cc-editor"></div>
+        <div id="cc-results"></div>
+        <div id="error" class="is-hidden"></div>
+        <button id="runcc" title="⌘↵">Run</button>
 
-        #error.is-hidden {
-            opacity: 0;
-        }
+        <script src="ace/ace-noconflict.js" type="text/javascript" charset="utf-8"></script>
+        <script src="ace/mode-coffee-noconflict.js" type="text/javascript" charset="utf-8"></script>
+        <script src="ace/mode-javascript-noconflict.js" type="text/javascript" charset="utf-8"></script>
+        <script src="ace/theme-twilight-noconflict.js" type="text/javascript" charset="utf-8"></script>
+        <script src="coffee-console-app.js"> </script>
 
-        #cc-results .ace_gutter {
-            cursor: ew-resize;
-        }
-    </style>
-</head>
-<body>
-    <div id="cc-editor"></div>
-    <div id="cc-results"></div>
-    <div id="error" class="is-hidden"></div>
-    <button id="runcc" title="⌘↵">Run</button>
-
-<script src="ace/ace-noconflict.js" type="text/javascript" charset="utf-8"></script>
-<script src="ace/mode-coffee-noconflict.js" type="text/javascript" charset="utf-8"></script>
-<script src="ace/mode-javascript-noconflict.js" type="text/javascript" charset="utf-8"></script>
-<script src="ace/theme-twilight-noconflict.js" type="text/javascript" charset="utf-8"></script>
-<script src="coffee-console-app.js"> </script>
-
-</body>
+    </body>
 </html>

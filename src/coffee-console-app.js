@@ -96,7 +96,6 @@ function showError(error) {
 
 function clearError() {
     err.className = 'is-hidden';
-    err.innerHTML = '';
 }
 
 function update(){
