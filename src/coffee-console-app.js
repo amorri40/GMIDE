@@ -81,17 +81,32 @@ function resizePanels(sizes) {
 }
 
 function compileIt(){
-    chrome.devtools.inspectedWindow.eval( compiled.session.getValue(), function(result, isException) {});
+    chrome.devtools.inspectedWindow.eval( compiled.session.getValue(), function(result, error) {
+        if (error) {
+            showError(error.value);
+            debug(error.value)
+        }
+    });
+}
+
+function showError(error) {
+    err.className = '';
+    err.innerHTML = error;
+}
+
+function clearError() {
+    err.className = 'is-hidden';
+    err.innerHTML = '';
 }
 
 function update(){
     try {
         var compiledSource = CoffeeScript.compile( editor.session.getValue(), {bare:true});
         compiled.session.setValue(compiledSource);
+        clearError();
         err.className = 'is-hidden';
     } catch (error) {
-        err.className = '';
-        err.innerHTML = error.message;
+        showError(error.message)
     }
     localStorage.setItem("state" + tabId, editor.session.getValue());
 }
