@@ -1,0 +1,24 @@
+{
+  "name": "gmide",
+  "homepage": "https://github.com/amorri40/GMIDE",
+  "authors": [
+    "Ali"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "riot": "~2.3.11",
+    "rg": "https://github.com/RiotGear/rg.git"
+  }
+}
